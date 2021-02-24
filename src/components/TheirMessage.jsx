@@ -1,5 +1,5 @@
 const TheirMessage = ({ lastMessage, message }) => {
-    const isFirstMessageByUser = !lastMessage || lastMessage.sender.username != message.sender.username;
+    const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
     return (
         <div className="message-row">
             {isFirstMessageByUser && (
@@ -19,7 +19,7 @@ const TheirMessage = ({ lastMessage, message }) => {
                         style={{ marginLeft: isFirstMessageByUser ? '4px' : '48px' }}
                     />
                 ) : (
-                    <div className="message" style={{float: 'left', marginRight: '18px', color: 'white', backgroundColor: '#3B2A50'}}>
+                    <div className="message" style={{float: 'left', backgroundColor: '#CABCDC', marginLeft: isFirstMessageByUser ? '4px' : '48px' }}>
                         {message.text}
                     </div>
                 )
